@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylingjson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Interactive Recipe Catalog</title>
+</head>
+<body>
+
+
+        <nav class="sidebar">
+            <span class="logo">C<span id="logo-part">oo</span>kpal</span>
+              <div class="Icons">
+                  <span id="Home">Home</span>
+                  <span id="Expo">Explore</span>
+                  <span id="Help">Help</span>
+                  <img src="Profile.png" class="profileImage" alt="">
+              </div>
+          </nav>
+
+          <div class="center-im">
+            <img src="Banner.png" alt="" class="banner">
+          </div>
+
+          <div class="search-bar">
+            <header class="sfr">Search For Recipes</header>
+            <input type="text" id="searchInput" placeholder="Search for recipes...">
+            <!-- <label for="sub">Submit</label> -->
+            <input type="submit" id="sub" name="sub">
+          </div> 
+
+
+        <div class="filter">
+            <button class="toggle-btn active" id="all" onclick="filterRecipes('all')">All</button>
+            <button class="toggle-btn" id="vg" onclick="filterRecipes('veg')">Only Veg</button>
+            <button class="toggle-btn" id="nvg" onclick="filterRecipes('non-veg')">Only Non-Veg</button>
+        </div>
+
+        <div class="rating-filter">
+                <div class="fil">Filters</div><br>
+                <div class="rtn">Rating</div>
+            <label class="rating-crit">
+                <input type="radio" name="ratingFilter" value="above-4.5" onclick="filterByRating('above-4.5')">
+                Rating Above 4.5
+            </label>
+            <label class="rating-crit">
+                <input type="radio" name="ratingFilter" value="below-4.0" onclick="filterByRating('below-4.0')">
+                Rating Below 4.0
+            </label>
+        </div>
+
+
+    <main id="recipeContainer"></main>
+
+    <footer>
+        <div class="footer-b1">
+            <div><span class="logo">C<span id="logo-part">oo</span>kpal</span></div>
+            <div>
+                Cookpal is a recipe website with a wide variety of delicious recipes, 
+                easy-to-use search function. Join our community and let's cook together!
+            </div>
+        </div>
+        <div>
+            <div class="footer-t">Comapny</div>
+                <ul>
+                    <li>Home</li>
+                    <li>Explore</li>
+                    <li>Team</li>
+                    <li>About Us</li>
+                    <li>Activity</li>
+                </ul>
+            </div>
+        <div>
+            <div class="footer-t">Resources</div>
+                <ul>
+                    <li>Blog</li>
+                    <li>Uses Cases</li>
+                    <li>Testimonials</li>
+                    <li>Insights</li>
+                </ul>
+        </div>
+        <div class="footer-b4">
+            <div><span class="logo">C<span id="logo-part">oo</span>kpal</span></div>
+            <div>Ut risus mattis interdum faucibus facilisi. Facilisi purus accumsan aliquam.</div>
+            <div>
+                <input type="email" name="em" placeholder="Your Email                      @">
+                <input type="submit" name="sub-em" value="Subscribe">
+            </div>
+        </div>
+    </footer>
+
+    <div id="mobileDrawer" class="mobile-drawer">
+        <div class="mobile-drawer-header">
+            <button class="mobile-close-btn" onclick="closeMobileDrawer()">&times;</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInputMobile" placeholder="Search recipes...">
+        </div>
+        <div class="filter">
+            <button class="toggle-btn active" onclick="filterRecipes('all')">Show All</button>
+            <button class="toggle-btn" onclick="filterRecipes('veg')">Show Only Veg</button>
+            <button class="toggle-btn" onclick="filterRecipes('non-veg')">Show Only Non-Veg</button>
+        </div>
+        <div class="rating-filter">
+            <label>
+                <input type="radio" name="ratingFilterMobile" value="above-4.5" onclick="filterByRating('above-4.5')">
+                Rating Above 4.5
+            </label>
+            <label>
+                <input type="radio" name="ratingFilterMobile" value="below-4.0" onclick="filterByRating('below-4.0')">
+                Rating Below 4.0
+            </label>
+        </div>
+    </div>
+
+    <button class="mobile-drawer-toggle" onclick="toggleMobileDrawer()">&#9776;</button>
+
+    <script src="data.js"></script>
+    <script src="json.js"></script>
+</body>
+</html>
